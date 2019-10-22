@@ -7,7 +7,7 @@ import { AbstractControl } from './abstract-control';
  * A default ControlValueAccessor implementation
  */
 export abstract class DefaultControlValueAccessor<T> implements ControlValueAccessor<T> {
-  public abstract readonly control: AbstractControl<T>;
+  public abstract readonly control: AbstractControl<T | null>;
 
   public writeValue(value: T | null): void {
     this.control.setValue(value);
