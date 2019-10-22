@@ -4,7 +4,7 @@
 
 [![NPM version](http://img.shields.io/npm/v/ngx-typesafe-forms.svg?style=flat-square)](https://www.npmjs.com/package/ngx-typesafe-forms)
 [![NPM downloads](http://img.shields.io/npm/dm/ngx-typesafe-forms.svg?style=flat-square)](https://www.npmjs.com/package/ngx-typesafe-forms)
-[![Build status](https://img.shields.io/travis/ngx-typesafe-forms.svg?style=flat-square)](https://travis-ci.org/dirkluijk/ngx-typesafe-forms)
+[![Build status](https://img.shields.io/travis/dirkluijk/ngx-typesafe-forms.svg?style=flat-square)](https://travis-ci.org/dirkluijk/ngx-typesafe-forms)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 
 ## Overview
