@@ -1,0 +1,12 @@
+{
+  "name": "ngx-typesafe-forms",
+  "version": "1.0.0",
+  "description": "Because FormControl<T> is more awesome than FormControl",
+  "author": "Dirk Luijk <mail@dirkluijk.nl>",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "@angular/forms": "^8.0.0",
+    "rxjs": "^6.0.0"
+  }
+}
