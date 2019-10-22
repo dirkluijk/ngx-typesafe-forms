@@ -1,4 +1,4 @@
-# Type-safe Forms for Angular 🍞
+# Type-safe Forms for Angular 📝
 
 > Because `FormControl<T>` is more awesome than `FormControl`!
 
