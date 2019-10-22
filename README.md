@@ -5,7 +5,7 @@
 [![NPM version](http://img.shields.io/npm/v/ngx-typesafe-forms.svg?style=flat-square)](https://www.npmjs.com/package/ngx-typesafe-forms)
 [![NPM downloads](http://img.shields.io/npm/dm/ngx-typesafe-forms.svg?style=flat-square)](https://www.npmjs.com/package/ngx-typesafe-forms)
 [![Build status](https://img.shields.io/travis/dirkluijk/ngx-typesafe-forms.svg?style=flat-square)](https://travis-ci.org/dirkluijk/ngx-typesafe-forms)
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 
 ## Overview
 
@@ -121,7 +121,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/dirkluijk"><img src="https://avatars2.githubusercontent.com/u/2102973?v=4" width="100px;" alt="Dirk Luijk"/><br /><sub><b>Dirk Luijk</b></sub></a><br /><a href="https://github.com/dirkluijk/@ngx-typesafe-forms/commits?author=dirkluijk" title="Code">💻</a> <a href="https://github.com/dirkluijk/ngx-breadcrumpy/commits?author=dirkluijk" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/dirkluijk"><img src="https://avatars2.githubusercontent.com/u/2102973?v=4" width="100px;" alt="Dirk Luijk"/><br /><sub><b>Dirk Luijk</b></sub></a><br /><a href="https://github.com/dirkluijk/ngx-typesafe-forms/commits?author=dirkluijk" title="Code">💻</a> <a href="https://github.com/dirkluijk/ngx-typesafe-forms/commits?author=dirkluijk" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://craftsmen.nl/"><img src="https://avatars0.githubusercontent.com/u/16564855?v=4" width="100px;" alt="Daan Scheerens"/><br /><sub><b>Daan Scheerens</b></sub></a><br /><a href="#ideas-dscheerens" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
