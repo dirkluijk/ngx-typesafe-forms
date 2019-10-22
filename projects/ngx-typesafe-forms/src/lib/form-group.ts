@@ -20,22 +20,16 @@ import { AbstractControlOptions, AsyncValidatorFn, ValidatorFn } from './validat
 
 type StringKeys<T> = Extract<keyof T, string>;
 
-interface TypedFormGroup<T> extends AbstractControl<T> {
-  registerControl<K extends StringKeys<T>>(name: K, control: AbstractControl<T[K]>): AbstractControl<T[K]>;
-  addControl<K extends StringKeys<T>>(name: K, control: AbstractControl<T[K]>): void;
-  removeControl<K extends StringKeys<T>>(name: K): void;
-  setControl<K extends StringKeys<T>>(name: K, control: AbstractControl<T[K]>): void;
-  contains<K extends StringKeys<T>>(controlName: K): this is FormGroup<T & { [X in K]: NonNullable<T[K]> }>;
-  reset(value?: T, options?: { onlySelf?: boolean; emitEvent?: boolean }): void;
-  getRawValue(): T;
-  setValue(value: T, options?: {onlySelf?: boolean; emitEvent?: boolean }): void;
-  patchValue(value: Partial<T>, options?: { onlySelf?: boolean; emitEvent?: boolean }): void;
-}
-
 /**
  * A type-safe FormGroup class which accepts a generic type T.
  */
-export class FormGroup<T> extends AngularFormGroup implements TypedFormGroup<T> {
+export class FormGroup<T> extends AngularFormGroup implements AbstractControl<T> {
+  public value!: T;
+  public valueChanges!: Observable<T>;
+
+  public validator!: ValidatorFn<T> | null;
+  public asyncValidator!: AsyncValidatorFn<T> | null;
+
   constructor(
     public controls: {
       [K in keyof T]: AbstractControl<T[K]>;
@@ -44,6 +38,50 @@ export class FormGroup<T> extends AngularFormGroup implements TypedFormGroup<T> 
     asyncValidator?: AsyncValidatorFn<T> | AsyncValidatorFn<T>[] | null
   ) {
     super(controls, validatorOrOpts, asyncValidator);
+  }
+
+  public setValidators(newValidator: ValidatorFn<T> | ValidatorFn<T>[] | null): void {
+    super.setValidators(newValidator);
+  }
+
+  public setAsyncValidators(newValidator: AsyncValidatorFn<T> | AsyncValidatorFn<T>[] | null): void {
+    super.setAsyncValidators(newValidator);
+  }
+
+  public registerControl<K extends StringKeys<T>>(name: K, control: AbstractControl<T[K]>): AbstractControl<T[K]> {
+    return super.registerControl(name, control);
+  }
+
+  public addControl<K extends StringKeys<T>>(name: K, control: AbstractControl<T[K]>): void {
+    return super.addControl(name, control);
+  }
+
+  public removeControl<K extends StringKeys<T>>(name: K): void {
+    return super.removeControl(name);
+  }
+
+  public setControl<K extends StringKeys<T>>(name: K, control: AbstractControl<T[K]>): void {
+    return super.setControl(name, control);
+  }
+
+  public contains<K extends StringKeys<T>>(controlName: K): this is FormGroup<T & { [X in K]: NonNullable<T[K]> }> {
+    return super.contains(controlName);
+  }
+
+  public reset(value?: T, options?: { onlySelf?: boolean; emitEvent?: boolean }): void {
+    return super.reset(value, options);
+  }
+
+  public getRawValue(): T {
+    return super.getRawValue();
+  }
+
+  public setValue(value: T, options?: {onlySelf?: boolean; emitEvent?: boolean }): void {
+    return super.setValue(value, options);
+  }
+
+  public patchValue(value: Partial<T>, options?: { onlySelf?: boolean; emitEvent?: boolean }): void {
+    return super.patchValue(value, options);
   }
 
   public get value$(): Observable<T> {

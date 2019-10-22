@@ -18,8 +18,33 @@ import { FormStatus } from './internals/form-status';
 import { AbstractControl } from './abstract-control';
 import { AbstractControlOptions, AsyncValidatorFn, ValidatorFn } from './validation';
 
-interface TypedFormControl<T> extends AbstractControl<T> {
-  setValue(
+/**
+ * Provides a type safe FormControl class which accepts a generic type T.
+ */
+export class FormControl<T> extends AngularFormControl implements AbstractControl<T> {
+  public value!: T;
+  public valueChanges!: Observable<T>;
+
+  public validator!: ValidatorFn<T> | null;
+  public asyncValidator!: AsyncValidatorFn<T> | null;
+
+  constructor(
+    formState?: T,
+    validatorOrOpts?: ValidatorFn<T> | ValidatorFn<T>[] | AbstractControlOptions<T> | null,
+    asyncValidator?: AsyncValidatorFn<T> | AsyncValidatorFn<T>[] | null
+  ) {
+    super(formState, validatorOrOpts, asyncValidator);
+  }
+
+  public setValidators(newValidator: ValidatorFn<T> | ValidatorFn<T>[] | null): void {
+    super.setValidators(newValidator);
+  }
+
+  public setAsyncValidators(newValidator: AsyncValidatorFn<T> | AsyncValidatorFn<T>[] | null): void {
+    super.setAsyncValidators(newValidator);
+  }
+
+  public setValue(
     value: T,
     options?: {
       onlySelf?: boolean;
@@ -27,9 +52,11 @@ interface TypedFormControl<T> extends AbstractControl<T> {
       emitModelToViewChange?: boolean;
       emitViewToModelChange?: boolean;
     }
-  ): void;
+  ): void {
+    super.setValue(value, options);
+  }
 
-  patchValue(
+  public patchValue(
     value: Partial<T>,
     options?: {
       onlySelf?: boolean;
@@ -37,21 +64,12 @@ interface TypedFormControl<T> extends AbstractControl<T> {
       emitModelToViewChange?: boolean;
       emitViewToModelChange?: boolean;
     }
-  ): void;
+  ): void {
+    super.patchValue(value, options);
+  }
 
-  reset(formState?: T, options?: {onlySelf?: boolean; emitEvent?: boolean }): void;
-}
-
-/**
- * Provides a type safe FormControl class which accepts a generic type T.
- */
-export class FormControl<T> extends AngularFormControl implements TypedFormControl<T> {
-  constructor(
-    formState?: T,
-    validatorOrOpts?: ValidatorFn<T> | ValidatorFn<T>[] | AbstractControlOptions<T> | null,
-    asyncValidator?: AsyncValidatorFn<T> | AsyncValidatorFn<T>[] | null
-  ) {
-    super(formState, validatorOrOpts, asyncValidator);
+  public reset(formState?: T, options?: {onlySelf?: boolean; emitEvent?: boolean }): void {
+    super.reset(formState, options);
   }
 
   public get value$(): Observable<T | null> {

@@ -18,27 +18,62 @@ import { setDisabled, setEnabled } from './internals/toggle-control';
 import { FormStatus } from './internals/form-status';
 import { AbstractControlOptions, AsyncValidatorFn, ValidatorFn } from './validation';
 
-interface TypedFormArray<T> extends AbstractControl<T[]> {
-  at(index: number): AbstractControl<T>;
-  push(control: AbstractControl<T>): void;
-  insert(index: number, control: AbstractControl<T>): void;
-  setControl(index: number, control: AbstractControl<T>): void;
-  setValue(value: T[], options?: { onlySelf?: boolean; emitEvent?: boolean }): void;
-  patchValue(value: T[], options?: { onlySelf?: boolean; emitEvent?: boolean }): void;
-  reset(value?: T[], options?: { onlySelf?: boolean; emitEvent?: boolean }): void;
-  getRawValue(): T[];
-}
-
 /**
  * Provides a type safe FormControl class which accepts a generic type T.
  */
-export class FormArray<T> extends AngularFormArray implements TypedFormArray<T> {
+export class FormArray<T> extends AngularFormArray implements AbstractControl<T[]> {
+  public value!: T[];
+  public valueChanges!: Observable<T[]>;
+
+  public validator!: ValidatorFn<T[]> | null;
+  public asyncValidator!: AsyncValidatorFn<T[]> | null;
+
   constructor(
     public controls: AbstractControl<T>[],
     validatorOrOpts?: ValidatorFn<T[]> | ValidatorFn<T[]>[] | AbstractControlOptions<T[]> | null,
     asyncValidator?: AsyncValidatorFn<T> | AsyncValidatorFn<T>[] | null
   ) {
     super(controls, validatorOrOpts, asyncValidator);
+  }
+
+  public setValidators(newValidator: ValidatorFn<T[]> | ValidatorFn<T[]>[] | null): void {
+    super.setValidators(newValidator);
+  }
+
+  public setAsyncValidators(newValidator: AsyncValidatorFn<T[]> | AsyncValidatorFn<T[]>[] | null): void {
+    super.setAsyncValidators(newValidator);
+  }
+
+  public at(index: number): AbstractControl<T> {
+    return super.at(index);
+  }
+
+  public push(control: AbstractControl<T>): void {
+    return super.push(control);
+  }
+
+  public insert(index: number, control: AbstractControl<T>): void {
+    return super.insert(index, control);
+  }
+
+  public setControl(index: number, control: AbstractControl<T>): void {
+    return super.setControl(index, control);
+  }
+
+  public setValue(value: T[], options?: { onlySelf?: boolean; emitEvent?: boolean }): void {
+    return super.setValue(value, options);
+  }
+
+  public patchValue(value: T[], options?: { onlySelf?: boolean; emitEvent?: boolean }): void {
+    return super.patchValue(value, options);
+  }
+
+  public reset(value?: T[], options?: { onlySelf?: boolean; emitEvent?: boolean }): void {
+    return super.reset(value, options);
+  }
+
+  public getRawValue(): T[] {
+    return super.getRawValue();
   }
 
   public get value$(): Observable<T> {
