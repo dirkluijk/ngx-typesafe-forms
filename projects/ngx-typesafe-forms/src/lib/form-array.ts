@@ -117,6 +117,6 @@ export class FormArray<T> extends AngularFormArray implements AbstractControl<T[
   }
 
   public setDisabled(disabled: boolean = true): void {
-    setDisabled(this, !disabled);
+    setDisabled(this, disabled);
   }
 }

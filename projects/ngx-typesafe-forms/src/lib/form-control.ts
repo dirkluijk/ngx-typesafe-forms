@@ -113,6 +113,6 @@ export class FormControl<T> extends AngularFormControl implements AbstractContro
   }
 
   public setDisabled(disabled: boolean = true): void {
-    setDisabled(this, !disabled);
+    setDisabled(this, disabled);
   }
 }

@@ -125,6 +125,6 @@ export class FormGroup<T> extends AngularFormGroup implements AbstractControl<T>
   }
 
   public setDisabled(disabled: boolean = true): void {
-    setDisabled(this, !disabled);
+    setDisabled(this, disabled);
   }
 }
