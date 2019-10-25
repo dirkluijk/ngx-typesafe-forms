@@ -76,7 +76,7 @@ export class FormArray<T> extends AngularFormArray implements AbstractControl<T[
     return super.getRawValue();
   }
 
-  public get value$(): Observable<T> {
+  public get value$(): Observable<T[]> {
     return formControlValue$(this);
   }
 
