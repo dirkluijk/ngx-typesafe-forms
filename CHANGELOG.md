@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v0.0.4...v0.0.5) (2019-10-28)
+
+
+### Bug Fixes
+
+* typings fix for FormControl.value$ ([feb996d](https://github.com/dirkluijk/ngx-typesafe-forms/commit/feb996d))
+
 ### [0.0.4](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v0.0.3...v0.0.4) (2019-10-25)
 
 
