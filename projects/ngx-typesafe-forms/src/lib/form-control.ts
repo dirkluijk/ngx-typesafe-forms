@@ -72,7 +72,7 @@ export class FormControl<T> extends AngularFormControl implements AbstractContro
     super.reset(formState, options);
   }
 
-  public get value$(): Observable<T | null> {
+  public get value$(): Observable<T> {
     return formControlValue$(this);
   }
 
