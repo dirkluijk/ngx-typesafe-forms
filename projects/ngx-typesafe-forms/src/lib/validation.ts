@@ -1,4 +1,7 @@
-import { ValidationErrors, AbstractControlOptions as AngularAbstractControlOptions } from '@angular/forms';
+import {
+  AbstractControlOptions as AngularAbstractControlOptions,
+  ValidationErrors
+} from '@angular/forms';
 import { Observable } from 'rxjs';
 
 import { AbstractControl } from './abstract-control';
