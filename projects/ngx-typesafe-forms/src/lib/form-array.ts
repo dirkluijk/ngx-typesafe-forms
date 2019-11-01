@@ -1,6 +1,6 @@
 import {
   FormArray as AngularFormArray,
-  ValidationErrors,
+  ValidationErrors
 } from '@angular/forms';
 import { Observable } from 'rxjs';
 

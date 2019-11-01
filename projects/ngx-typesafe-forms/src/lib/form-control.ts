@@ -1,6 +1,6 @@
 import {
   FormControl as AngularFormControl,
-  ValidationErrors,
+  ValidationErrors
 } from '@angular/forms';
 import { Observable } from 'rxjs';
 
