@@ -4,18 +4,19 @@ import {
 } from '@angular/forms';
 import { Observable } from 'rxjs';
 
+import {
+  abstractControlDirty$,
+  abstractControlDisabled$,
+  formControlEnabled$,
+  formControlError$,
+  formControlInvalid$,
+  formControlPristine$,
+  formControlStatus$,
+  formControlValid$,
+  formControlValue$
+} from './streams';
+import { setDisabled, setEnabled, FormStatus } from './internals';
 import { AbstractControl } from './abstract-control';
-import { formControlValue$ } from './streams/abstract-control-value.stream';
-import { formControlError$ } from './streams/abstract-control-error.stream';
-import { formControlEnabled$ } from './streams/abstract-control-enabled.stream';
-import { formControlPristine$ } from './streams/abstract-control-pristine.stream';
-import { formControlValid$ } from './streams/abstract-control-valid.stream';
-import { formControlStatus$ } from './streams/abstract-control-status.stream';
-import { abstractControlDisabled$ } from './streams/abstract-control-disabled.stream';
-import { abstractControlDirty$ } from './streams/abstract-control-dirty.stream';
-import { formControlInvalid$ } from './streams/abstract-control-invalid.stream';
-import { setDisabled, setEnabled } from './internals/toggle-control';
-import { FormStatus } from './internals/form-status';
 import { AbstractControlOptions, AsyncValidatorFn, ValidatorFn } from './validation';
 
 /**

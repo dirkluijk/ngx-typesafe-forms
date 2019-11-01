@@ -2,7 +2,7 @@ import { AbstractControl } from '@angular/forms';
 import { defer, merge, of, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { FormStatus } from '../internals/form-status';
+import { FormStatus } from '../internals';
 
 export function formControlStatus$(formControl: AbstractControl): Observable<FormStatus> {
   return merge(
