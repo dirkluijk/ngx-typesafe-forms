@@ -10,7 +10,7 @@ export abstract class DefaultControlValueAccessor<T> implements ControlValueAcce
   public abstract readonly control: AbstractControl<T | null>;
 
   public writeValue(value: T | null): void {
-    this.control.setValue(value);
+    this.control.setValue(value, { emitEvent: false });
   }
 
   public registerOnChange(onChange: (value: T | null) => void): void {
