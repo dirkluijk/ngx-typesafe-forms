@@ -20,7 +20,7 @@ export abstract class DefaultControlValueAccessor<T> implements ControlValueAcce
   public registerOnTouched(): void {}
 
   public setDisabledState(disabled: boolean): void {
-    disabled ? this.control.disable() : this.control.enable();
+    disabled ? this.control.disable({ emitEvent: false }) : this.control.enable({ emitEvent: false });
   }
 
   public validate(): ValidationErrors | null {
