@@ -1,7 +1,7 @@
 import { AbstractControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 
-import { mapToOpposite } from '../internals/map-to-opposite.operator';
+import { mapToOpposite } from '../internals';
 
 import { formControlValid$ } from './abstract-control-valid.stream';
 
