@@ -16,7 +16,7 @@ This is a small library to make Angular Forms more type-safe!
 * Type-safe versions of `FormControl`, `FormGroup`, `FormArray` and `ControlValueAccessor`
 * 100% compatible with `@angular/forms` and existing Angular libraries!
 * Easy to use!
-* Additional read-only properties `value$`, `valid$`, `pristine$`, `error$`, `enabled$` and more.
+* Additional read-only properties `value$`, `valid$`, `pristine$`, `errors$`, `enabled$` and more.
 * A default implementation for `ControlValueAccessor`
 * Type-safe validators
 
@@ -89,7 +89,7 @@ myControl.valid$.subscribe((valid) => {
 The recommended properties are:
 
 * `value$`
-* `error$`
+* `errors$`
 * `enabled$`
 * `pristine$`
 * `valid$`

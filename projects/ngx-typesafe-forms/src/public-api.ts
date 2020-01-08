@@ -1,7 +1,7 @@
 export { abstractControlDirty$ } from './lib/streams/abstract-control-dirty.stream';
 export { abstractControlDisabled$ } from './lib/streams/abstract-control-disabled.stream';
 export { formControlEnabled$ } from './lib/streams/abstract-control-enabled.stream';
-export { formControlError$ } from './lib/streams/abstract-control-error.stream';
+export { formControlErrors$ } from './lib/streams/abstract-control-errors.stream';
 export { formControlInvalid$ } from './lib/streams/abstract-control-invalid.stream';
 export { formControlPristine$ } from './lib/streams/abstract-control-pristine.stream';
 export { formControlStatus$ } from './lib/streams/abstract-control-status.stream';

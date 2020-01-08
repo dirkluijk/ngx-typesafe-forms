@@ -8,7 +8,7 @@ import {
   abstractControlDirty$,
   abstractControlDisabled$,
   formControlEnabled$,
-  formControlError$,
+  formControlErrors$,
   formControlInvalid$,
   formControlPristine$,
   formControlStatus$,
@@ -89,8 +89,8 @@ export class FormGroup<T> extends AngularFormGroup implements AbstractControl<T>
     return formControlValue$(this);
   }
 
-  public get error$(): Observable<ValidationErrors | null> {
-    return formControlError$(this);
+  public get errors$(): Observable<ValidationErrors | null> {
+    return formControlErrors$(this);
   }
 
   public get enabled$(): Observable<boolean> {

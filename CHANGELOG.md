@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v0.0.7...v0.0.8) (2020-01-08)
+
+
+### Bug Fixes
+
+* rename error$ to errors$ ([17d5ef5](https://github.com/dirkluijk/ngx-typesafe-forms/commit/17d5ef537c5a202f990165dff20cdbcf8a18e86e))
+
+### [0.0.7](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v0.0.6...v0.0.7) (2019-11-05)
+
+
+### Bug Fixes
+
+* prevent emitting events when setting disabled state ([51667a9](https://github.com/dirkluijk/ngx-typesafe-forms/commit/51667a9))
+
+### [0.0.6](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v0.0.5...v0.0.6) (2019-11-04)
+
+
+### Bug Fixes
+
+* prevent emitting events when writing value ([218bd97](https://github.com/dirkluijk/ngx-typesafe-forms/commit/218bd97))
+
 ### [0.0.5](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v0.0.4...v0.0.5) (2019-10-28)
 
 
