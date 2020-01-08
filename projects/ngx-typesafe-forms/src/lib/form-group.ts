@@ -5,7 +5,7 @@ import {
 import { Observable } from 'rxjs';
 
 import { formControlValue$ } from './streams/abstract-control-value.stream';
-import { formControlError$ } from './streams/abstract-control-error.stream';
+import { formControlErrors$ } from './streams/abstract-control-errors.stream';
 import { formControlValid$ } from './streams/abstract-control-valid.stream';
 import { formControlEnabled$ } from './streams/abstract-control-enabled.stream';
 import { formControlPristine$ } from './streams/abstract-control-pristine.stream';
@@ -88,8 +88,8 @@ export class FormGroup<T> extends AngularFormGroup implements AbstractControl<T>
     return formControlValue$(this);
   }
 
-  public get error$(): Observable<ValidationErrors | null> {
-    return formControlError$(this);
+  public get errors$(): Observable<ValidationErrors | null> {
+    return formControlErrors$(this);
   }
 
   public get enabled$(): Observable<boolean> {
