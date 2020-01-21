@@ -16,7 +16,7 @@
     "lint": "ng lint",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
-    "copy:docs": "cp ./*.md dist/ngx-typesafe-forms",
+    "copy:docs": "cp ./*.md ./LICENSE dist/ngx-typesafe-forms",
     "release": "cd projects/ngx-typesafe-forms && standard-version --infile ../../CHANGELOG.md && cd .. && yarn build"
   },
   "private": false,
