@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v0.0.8...v1.0.0) (2020-01-21)
+
+
+### Bug Fixes
+
+* fix wrong export in barrel file ([6bc2c17](https://github.com/dirkluijk/ngx-typesafe-forms/commit/6bc2c17b015cd669684b6450d8727c319e30b0b1))
+
 ### [0.0.8](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v0.0.7...v0.0.8) (2020-01-08)
 
 
