@@ -52,7 +52,7 @@
     "husky": "^3.0.3",
     "jest": "^24.9.0",
     "ng-packagr": "^5.3.0",
-    "standard-version": "^7.0.0",
+    "standard-version": "^8.0.1",
     "ts-node": "~7.0.0",
     "tsickle": "^0.37.0",
     "tslint": "~5.18.0",
