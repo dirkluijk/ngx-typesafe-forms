@@ -1,6 +1,9 @@
 {
   "extends": "@dscheerens/tslint-presets/tslint.recommended.angular.json",
   "rules": {
+    "deprecation": {
+      "severity": "warning"
+    },
     "linebreak-style": false,
     "no-implicit-dependencies": false,
     "strict-indent-size": [true, 2],
