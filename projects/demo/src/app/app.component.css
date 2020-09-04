@@ -1,0 +1,8 @@
+p {
+  font-family: Lato;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
