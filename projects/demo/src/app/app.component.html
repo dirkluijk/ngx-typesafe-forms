@@ -1,1 +1,19 @@
-<h1>Sample app</h1>
+<h3>Simple form</h3>
+<form [formGroup]="myFormGroup" (ngSubmit)="onFormSubmit()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Name" [formControl]="name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Birthdate</mat-label>
+    <input matInput [formControl]="birthDate" [matDatepicker]="picker" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-raised-button type="submit">Submit</button>
+</form>
+
+<p>With the subscription we get the initial values as well:</p>
+{{ person | json }}
