@@ -3,6 +3,7 @@ import {
   ValidationErrors
 } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 import {
   abstractControlDirty$,
@@ -107,6 +108,10 @@ export class FormControl<T> extends AngularFormControl implements AbstractContro
 
   public get invalid$(): Observable<boolean> {
     return formControlInvalid$(this);
+  }
+
+  public get validValue$(): Observable<T> {
+    return this.value$.pipe(filter(() => this.valid));
   }
 
   public setEnabled(enabled: boolean = true): void {

@@ -94,8 +94,9 @@ The recommended properties are:
 * `pristine$`
 * `valid$`
 * `status$`
+* `validValue$`
 
-Additionally, we also provide their counterparts:
+Additionally, we also provide some of their counterparts:
 
 * `disabled$`
 * `dirty$`
