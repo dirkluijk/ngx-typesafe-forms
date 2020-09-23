@@ -122,13 +122,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/dirkluijk"><img src="https://avatars2.githubusercontent.com/u/2102973?v=4" width="100px;" alt="Dirk Luijk"/><br /><sub><b>Dirk Luijk</b></sub></a><br /><a href="https://github.com/dirkluijk/ngx-typesafe-forms/commits?author=dirkluijk" title="Code">💻</a> <a href="https://github.com/dirkluijk/ngx-typesafe-forms/commits?author=dirkluijk" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://craftsmen.nl/"><img src="https://avatars0.githubusercontent.com/u/16564855?v=4" width="100px;" alt="Daan Scheerens"/><br /><sub><b>Daan Scheerens</b></sub></a><br /><a href="#ideas-dscheerens" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/dirkluijk"><img src="https://avatars2.githubusercontent.com/u/2102973?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dirk Luijk</b></sub></a><br /><a href="https://github.com/dirkluijk/ngx-typesafe-forms/commits?author=dirkluijk" title="Code">💻</a> <a href="https://github.com/dirkluijk/ngx-typesafe-forms/commits?author=dirkluijk" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://craftsmen.nl/"><img src="https://avatars0.githubusercontent.com/u/16564855?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daan Scheerens</b></sub></a><br /><a href="#ideas-dscheerens" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/JurJean"><img src="https://avatars1.githubusercontent.com/u/409761?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jur Balledux</b></sub></a><br /><a href="https://github.com/dirkluijk/ngx-typesafe-forms/issues?q=author%3AJurJean" title="Bug reports">🐛</a> <a href="https://github.com/dirkluijk/ngx-typesafe-forms/commits?author=JurJean" title="Code">💻</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

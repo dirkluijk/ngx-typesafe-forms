@@ -28,6 +28,16 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "JurJean",
+      "name": "Jur Balledux",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/409761?v=4",
+      "profile": "https://github.com/JurJean",
+      "contributions": [
+        "bug",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
