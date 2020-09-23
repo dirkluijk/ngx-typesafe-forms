@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.2.1...v1.2.2) (2020-09-23)
+
+
+### Bug Fixes
+
+* 'not assignable to the same property in base type' typescript 4 ([#14](https://github.com/dirkluijk/ngx-typesafe-forms/issues/14)) ([2fcce63](https://github.com/dirkluijk/ngx-typesafe-forms/commit/2fcce63094adf7594073bb72a927c2865f2d3fb6))
+
 ### [1.2.1](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.2.0...v1.2.1) (2020-09-17)
 
 
