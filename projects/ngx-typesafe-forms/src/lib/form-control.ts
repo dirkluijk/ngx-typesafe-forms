@@ -27,7 +27,10 @@ export class FormControl<T> extends AngularFormControl implements AbstractContro
   public value!: T;
   public valueChanges!: Observable<T>;
 
+  /* tslint:disable:variable-name */
   private _validator: ValidatorFn<T> | null = null;
+  private _asyncValidator: AsyncValidatorFn<T> | null = null;
+  /* tslint:enable:variable-name */
 
   public set validator(validator: ValidatorFn<T> | null) {
     this._validator = validator;
@@ -36,8 +39,6 @@ export class FormControl<T> extends AngularFormControl implements AbstractContro
   public get validator(): ValidatorFn<T> | null {
     return this._validator;
   }
-
-  private _asyncValidator: AsyncValidatorFn<T> | null = null;
 
   public set asyncValidator(asyncValidator: AsyncValidatorFn<T> | null) {
     this._asyncValidator = asyncValidator;
