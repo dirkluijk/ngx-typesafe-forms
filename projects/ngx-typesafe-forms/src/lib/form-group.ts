@@ -29,8 +29,25 @@ export class FormGroup<T> extends AngularFormGroup implements AbstractControl<T>
   public value!: T;
   public valueChanges!: Observable<T>;
 
-  public validator!: ValidatorFn<T> | null;
-  public asyncValidator!: AsyncValidatorFn<T> | null;
+  private _validator: ValidatorFn<T> | null = null;
+
+  public set validator(validator: ValidatorFn<T> | null) {
+    this._validator = validator;
+  }
+
+  public get validator(): ValidatorFn<T> | null {
+    return this._validator;
+  }
+
+  private _asyncValidator: AsyncValidatorFn<T> | null = null;
+
+  public set asyncValidator(asyncValidator: AsyncValidatorFn<T> | null) {
+    this._asyncValidator = asyncValidator;
+  }
+
+  public get asyncValidator(): AsyncValidatorFn<T> | null {
+    return this._asyncValidator;
+  }
 
   constructor(
     public controls: {
