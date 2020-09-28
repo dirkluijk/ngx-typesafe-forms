@@ -37,7 +37,7 @@ export class FormArray<T> extends AngularFormArray implements AbstractControl<T[
   }
 
   public get validator(): ValidatorFn<T[]> | null {
-    return this._validator;
+    return super.validator;
   }
 
   public set asyncValidator(asyncValidator: AsyncValidatorFn<T[]> | null) {
