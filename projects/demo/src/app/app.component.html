@@ -1,1 +1,8 @@
 <h1>Sample app</h1>
+
+<p>
+  <input type="text" [formControl]="formControls.name">
+</p>
+<p><code>value = {{ formControls.name.value | json }}</code></p>
+<p><code>valid = {{ formControls.name.valid | json }}</code></p>
+<p><code>errors = {{ formControls.name.errors | json }}</code></p>

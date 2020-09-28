@@ -27,25 +27,20 @@ export class FormArray<T> extends AngularFormArray implements AbstractControl<T[
   public value!: T[];
   public valueChanges!: Observable<T[]>;
 
-  /* tslint:disable:variable-name */
-  private _validator: ValidatorFn<T[]> | null = null;
-  private _asyncValidator: AsyncValidatorFn<T[]> | null = null;
-  /* tslint:enable:variable-name */
-
-  public set validator(validator: ValidatorFn<T[]> | null) {
-    this._validator = validator;
-  }
-
   public get validator(): ValidatorFn<T[]> | null {
-    return this._validator;
+    return super.validator;
   }
 
-  public set asyncValidator(asyncValidator: AsyncValidatorFn<T[]> | null) {
-    this._asyncValidator = asyncValidator;
+  public set validator(value: ValidatorFn<T[]> | null) {
+    super.validator = value;
   }
 
   public get asyncValidator(): AsyncValidatorFn<T[]> | null {
-    return this._asyncValidator;
+    return super.asyncValidator;
+  }
+
+  public set asyncValidator(value: AsyncValidatorFn<T[]> | null) {
+    super.asyncValidator = value;
   }
 
   constructor(

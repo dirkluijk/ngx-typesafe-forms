@@ -1,5 +1,6 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -8,7 +9,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserAnimationsModule,
+    BrowserModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
