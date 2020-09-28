@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.2.2...v1.2.3) (2020-09-28)
+
+
+### Bug Fixes
+
+* fixed broken validators in 1.2.2 ([6f7c6a2](https://github.com/dirkluijk/ngx-typesafe-forms/commit/6f7c6a2b3a607628f813d1c036602c06502b1dcd))
+
 ### [1.2.2](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.2.1...v1.2.2) (2020-09-23)
 
 
