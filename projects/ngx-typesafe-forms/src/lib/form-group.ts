@@ -80,12 +80,12 @@ export class FormGroup<T> extends AngularFormGroup implements AbstractControl<T>
     return super.setControl(name, control);
   }
 
-  public contains<K extends StringKeys<T>>(controlName: K): this is FormGroup<T & { [X in K]: NonNullable<T[K]> }> {
+  public contains<K extends StringKeys<T>>(controlName: K): this is FormGroup<T & { [X in K]: T[K] }> {
     return super.contains(controlName);
   }
 
   public getControl<K extends StringKeys<T>>(controlName: K): AbstractControl<T[K]> {
-    if (this.contains(controlName)) {
+    if (!this.contains(controlName)) {
       throw Error(`Control with name ${controlName} is not present.`);
     }
 
