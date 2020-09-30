@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.2.4...v1.3.0) (2020-09-30)
+
+
+### Features
+
+* allow retrieving nested controls more type-safe ([59a764e](https://github.com/dirkluijk/ngx-typesafe-forms/commit/59a764e16f5b50f8a16dadc751600010939be234))
+
 ### [1.2.4](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.2.3...v1.2.4) (2020-09-30)
 
 
