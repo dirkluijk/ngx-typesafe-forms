@@ -113,6 +113,20 @@ If you want to assume that form values are always valid, just use `FormControl<F
 However, form values can also be null (if invalid). If you want to use this more strictly, you can use `FormControl<Foo | null>`
 or even `FormGroup<Invalidated<Foo>>` (which marks all properties as nullable).
 
+### Help, my `myFormGroup.controls.foo` is an optional `AbstractControl`!
+
+Sometimes, it's not guaranteed that a `FormGroup` contains a certain form control,
+or that it is actually a `FormControl` (it could also be a `FormArray`).
+
+For that reason, we introduced new methods to `FormGroup` in version `1.3.0`:
+
+* `FormGroup.getControl(name: string)` - returns a `AbstractControl`, throws error if it was not found.
+* `FormGroup.getFormControl(name: string)` - returns a `FormControl`, throws error if it was not found or not instance of `FormControl`.
+
+The same applies for `FormArray.at(index: number)`, which returns a `AbstractControl`. For that reason we introduced:
+
+* `FormArray.controlAt(index: number)` - returns a `FormControl`, throws error if it is not an instance of `FormControl`.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):

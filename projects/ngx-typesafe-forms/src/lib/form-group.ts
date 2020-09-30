@@ -19,6 +19,7 @@ import {
 import { setDisabled, setEnabled, FormStatus } from './internals';
 import { AbstractControl } from './abstract-control';
 import { AbstractControlOptions, AsyncValidatorFn, ValidatorFn } from './validation';
+import { FormControl } from './form-control';
 
 type StringKeys<T> = Extract<keyof T, string>;
 
@@ -47,7 +48,7 @@ export class FormGroup<T> extends AngularFormGroup implements AbstractControl<T>
 
   constructor(
     public controls: {
-      [K in keyof T]: FormGroup<T[K]>;
+      [K in keyof T]: AbstractControl<T[K]>;
     },
     validatorOrOpts?: ValidatorFn<T> | ValidatorFn<T>[] | AbstractControlOptions<T> | null,
     asyncValidator?: AsyncValidatorFn<T> | AsyncValidatorFn<T>[] | null
@@ -81,6 +82,24 @@ export class FormGroup<T> extends AngularFormGroup implements AbstractControl<T>
 
   public contains<K extends StringKeys<T>>(controlName: K): this is FormGroup<T & { [X in K]: NonNullable<T[K]> }> {
     return super.contains(controlName);
+  }
+
+  public getControl<K extends StringKeys<T>>(controlName: K): AbstractControl<T[K]> {
+    if (this.contains(controlName)) {
+      throw Error(`Control with name ${controlName} is not present.`);
+    }
+
+    return this.controls[controlName];
+  }
+
+  public getFormControl<K extends StringKeys<T>>(controlName: K): FormControl<T[K]> {
+    const control = this.getControl(controlName);
+
+    if (!(control instanceof FormControl)) {
+      throw Error(`Abstract control with name ${controlName} is not a FormControl.`);
+    }
+
+    return control;
   }
 
   public reset(value?: T, options?: { onlySelf?: boolean; emitEvent?: boolean }): void {

@@ -19,6 +19,7 @@ import {
 import { setDisabled, setEnabled, FormStatus } from './internals';
 import { AbstractControl } from './abstract-control';
 import { AbstractControlOptions, AsyncValidatorFn, ValidatorFn } from './validation';
+import { FormControl } from './form-control';
 
 /**
  * Provides a type safe FormControl class which accepts a generic type T.
@@ -61,6 +62,16 @@ export class FormArray<T> extends AngularFormArray implements AbstractControl<T[
 
   public at(index: number): AbstractControl<T> {
     return super.at(index);
+  }
+
+  public controlAt(index: number): FormControl<T> {
+    const control = this.at(index);
+
+    if (!(control instanceof FormControl)) {
+      throw Error(`Abstract control with index ${index} is not a FormControl.`);
+    }
+
+    return control;
   }
 
   public push(control: AbstractControl<T>): void {
