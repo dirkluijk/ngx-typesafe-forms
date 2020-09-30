@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.4](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.2.3...v1.2.4) (2020-09-30)
+
+
+### Bug Fixes
+
+* made FormGroup.controls more specific for template-use ([73427b6](https://github.com/dirkluijk/ngx-typesafe-forms/commit/73427b6d8be0660516f438c797bf364f3551c622))
+
 ### [1.2.3](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.2.2...v1.2.3) (2020-09-28)
 
 
