@@ -47,7 +47,7 @@ export class FormGroup<T> extends AngularFormGroup implements AbstractControl<T>
 
   constructor(
     public controls: {
-      [K in keyof T]: AbstractControl<T[K]>;
+      [K in keyof T]: FormGroup<T[K]>;
     },
     validatorOrOpts?: ValidatorFn<T> | ValidatorFn<T>[] | AbstractControlOptions<T> | null,
     asyncValidator?: AsyncValidatorFn<T> | AsyncValidatorFn<T>[] | null
