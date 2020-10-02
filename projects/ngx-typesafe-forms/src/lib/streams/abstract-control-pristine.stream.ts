@@ -4,7 +4,7 @@ import { distinctUntilChanged, map } from 'rxjs/operators';
 
 export function formControlPristine$(formControl: AbstractControl): Observable<boolean> {
   return merge(
-    defer(() => of(formControl.valid)),
+    defer(() => of(formControl.pristine)),
     formControl.valueChanges.pipe(
       map(() => formControl.pristine),
       distinctUntilChanged()
