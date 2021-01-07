@@ -27,22 +27,6 @@ export class FormControl<T> extends AngularFormControl implements AbstractContro
   public value!: T;
   public valueChanges!: Observable<T>;
 
-  public get validator(): ValidatorFn<T> | null {
-    return super.validator;
-  }
-
-  public set validator(value: ValidatorFn<T> | null) {
-    super.validator = value;
-  }
-
-  public get asyncValidator(): AsyncValidatorFn<T> | null {
-    return super.asyncValidator;
-  }
-
-  public set asyncValidator(value: AsyncValidatorFn<T> | null) {
-    super.asyncValidator = value;
-  }
-
   constructor(
     formState?: T,
     validatorOrOpts?: ValidatorFn<T> | ValidatorFn<T>[] | AbstractControlOptions<T> | null,
