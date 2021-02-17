@@ -30,6 +30,26 @@ export class FormGroup<T> extends AngularFormGroup implements AbstractControl<T>
   public value!: T;
   public valueChanges!: Observable<T>;
 
+  public readonly value$: Observable<T> = formControlValue$(this);
+
+  public readonly errors$: Observable<ValidationErrors | null> = formControlErrors$(this);
+
+  public readonly enabled$: Observable<boolean> = formControlEnabled$(this);
+
+  public readonly pristine$: Observable<boolean> = formControlPristine$(this);
+
+  public readonly valid$: Observable<boolean> = formControlValid$(this);
+
+  public readonly status$: Observable<FormStatus> = formControlStatus$(this);
+
+  public readonly disabled$: Observable<boolean> = abstractControlDisabled$(this);
+
+  public readonly dirty$: Observable<boolean> = abstractControlDirty$(this);
+
+  public readonly invalid$: Observable<boolean> = formControlInvalid$(this);
+
+  public readonly validValue$: Observable<T> = this.value$.pipe(filter(() => this.valid));
+
   constructor(
     public controls: {
       [K in keyof T]: AbstractControl<T[K]>;
@@ -101,26 +121,6 @@ export class FormGroup<T> extends AngularFormGroup implements AbstractControl<T>
   public patchValue(value: Partial<T>, options?: { onlySelf?: boolean; emitEvent?: boolean }): void {
     return super.patchValue(value, options);
   }
-
-  public readonly value$: Observable<T> = formControlValue$(this);
-
-  public readonly errors$: Observable<ValidationErrors | null> = formControlErrors$(this);
-
-  public readonly enabled$: Observable<boolean> = formControlEnabled$(this);
-
-  public readonly pristine$: Observable<boolean> = formControlPristine$(this);
-
-  public readonly valid$: Observable<boolean> = formControlValid$(this);
-
-  public readonly status$: Observable<FormStatus> = formControlStatus$(this);
-
-  public readonly disabled$: Observable<boolean> = abstractControlDisabled$(this);
-
-  public readonly dirty$: Observable<boolean> = abstractControlDirty$(this);
-
-  public readonly invalid$: Observable<boolean> = formControlInvalid$(this);
-
-  public readonly validValue$: Observable<T> = this.value$.pipe(filter(() => this.valid));
 
   public setEnabled(enabled: boolean = true): void {
     setEnabled(this, enabled);
