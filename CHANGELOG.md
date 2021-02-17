@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.4.0...v1.4.1) (2021-02-17)
+
+
+### Bug Fixes
+
+* dont create new observables each time ([02001e3](https://github.com/dirkluijk/ngx-typesafe-forms/commit/02001e3edd41704b2c69345f788a42f8543f2c4d))
+* fixed pristine$ stream  ([f67b7b8](https://github.com/dirkluijk/ngx-typesafe-forms/commit/f67b7b8969c266c66f893886db1112f3ebd7bd55))
+
 ## [1.4.0](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.3.1...v1.4.0) (2021-01-07)
 
 
