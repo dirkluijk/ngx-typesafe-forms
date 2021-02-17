@@ -71,45 +71,25 @@ export class FormControl<T> extends AngularFormControl implements AbstractContro
     super.reset(formState, options);
   }
 
-  public get value$(): Observable<T> {
-    return formControlValue$(this);
-  }
+  public readonly value$: Observable<T> = formControlValue$(this);
 
-  public get errors$(): Observable<ValidationErrors | null> {
-    return formControlErrors$(this);
-  }
+  public readonly errors$: Observable<ValidationErrors | null> = formControlErrors$(this);
 
-  public get enabled$(): Observable<boolean> {
-    return formControlEnabled$(this);
-  }
+  public readonly enabled$: Observable<boolean> = formControlEnabled$(this);
 
-  public get pristine$(): Observable<boolean> {
-    return formControlPristine$(this);
-  }
+  public readonly pristine$: Observable<boolean> = formControlPristine$(this);
 
-  public get valid$(): Observable<boolean> {
-    return formControlValid$(this);
-  }
+  public readonly valid$: Observable<boolean> = formControlValid$(this);
 
-  public get status$(): Observable<FormStatus> {
-    return formControlStatus$(this);
-  }
+  public readonly status$: Observable<FormStatus> = formControlStatus$(this);
 
-  public get disabled$(): Observable<boolean> {
-    return abstractControlDisabled$(this);
-  }
+  public readonly disabled$: Observable<boolean> = abstractControlDisabled$(this);
 
-  public get dirty$(): Observable<boolean> {
-    return abstractControlDirty$(this);
-  }
+  public readonly dirty$: Observable<boolean> = abstractControlDirty$(this);
 
-  public get invalid$(): Observable<boolean> {
-    return formControlInvalid$(this);
-  }
+  public readonly invalid$: Observable<boolean> = formControlInvalid$(this);
 
-  public get validValue$(): Observable<T> {
-    return this.value$.pipe(filter(() => this.valid));
-  }
+  public readonly validValue$: Observable<T> = this.value$.pipe(filter(() => this.valid));
 
   public setEnabled(enabled: boolean = true): void {
     setEnabled(this, enabled);

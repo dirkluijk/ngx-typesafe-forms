@@ -3,6 +3,7 @@
 <p>
   <input type="text" [formControl]="formControls.name">
 </p>
-<p><code>value = {{ formControls.name.value | json }}</code></p>
-<p><code>valid = {{ formControls.name.valid | json }}</code></p>
-<p><code>errors = {{ formControls.name.errors | json }}</code></p>
+<p><code>value = {{ formControls.name.value | json }} {{ formControls.name.value$ | async | json }}</code></p>
+<p><code>valid = {{ formControls.name.valid | json }} {{ formControls.name.valid$ | async | json }}</code></p>
+<p><code>pristine = {{ formControls.name.pristine | json }} {{ formControls.name.pristine$ | async | json }}</code></p>
+<p><code>errors = {{ formControls.name.errors | json }} {{ formControls.name.errors$ | async | json }}</code></p>
