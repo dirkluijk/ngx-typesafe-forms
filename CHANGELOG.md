@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.2](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.4.1...v1.4.2) (2021-04-07)
+
+
+### Bug Fixes
+
+* make FormGroup assignable to the Angular FormGroup ([697e872](https://github.com/dirkluijk/ngx-typesafe-forms/commit/697e872257164d74f53d6dd3129c07ce386358c3))
+
 ### [1.4.1](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.4.0...v1.4.1) (2021-02-17)
 
 
