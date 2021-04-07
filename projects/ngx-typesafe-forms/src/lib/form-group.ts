@@ -1,5 +1,6 @@
 import {
   FormGroup as AngularFormGroup,
+  AbstractControl as AngularAbstractControl,
   ValidationErrors
 } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -29,6 +30,9 @@ type StringKeys<T> = Extract<keyof T, string>;
 export class FormGroup<T> extends AngularFormGroup implements AbstractControl<T> {
   public value!: T;
   public valueChanges!: Observable<T>;
+  public controls!: {
+    [key: string]: AngularAbstractControl;
+  };
 
   public readonly value$: Observable<T> = formControlValue$(this);
 
@@ -51,13 +55,14 @@ export class FormGroup<T> extends AngularFormGroup implements AbstractControl<T>
   public readonly validValue$: Observable<T> = this.value$.pipe(filter(() => this.valid));
 
   constructor(
-    public controls: {
+    controls: {
       [K in keyof T]: AbstractControl<T[K]>;
     },
     validatorOrOpts?: ValidatorFn<T> | ValidatorFn<T>[] | AbstractControlOptions<T> | null,
     asyncValidator?: AsyncValidatorFn<T> | AsyncValidatorFn<T>[] | null
   ) {
     super(controls, validatorOrOpts, asyncValidator);
+    this.controls = controls;
   }
 
   public setValidators(newValidator: ValidatorFn<T> | ValidatorFn<T>[] | null): void {

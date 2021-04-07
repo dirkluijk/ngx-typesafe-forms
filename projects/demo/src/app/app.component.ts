@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Validators } from '@angular/forms';
+import { Validators, FormGroup as AngularFormGroup } from '@angular/forms';
 
 import { AbstractControl, FormArray, FormControl, FormGroup } from '../../../ngx-typesafe-forms/src/public-api';
 
@@ -22,6 +22,14 @@ export class AppComponent implements OnInit {
   };
 
   public readonly formGroup = new FormGroup<Foo>({
+    id: new FormControl<string>(),
+    name: new FormControl<string>(),
+    optionalProp: new FormControl<string | undefined>(),
+    arrayProp: new FormArray<string>([new FormControl<string>()])
+  });
+
+  // should be assignable:
+  public readonly formGroupNg: AngularFormGroup = new FormGroup<Foo>({
     id: new FormControl<string>(),
     name: new FormControl<string>(),
     optionalProp: new FormControl<string | undefined>(),
