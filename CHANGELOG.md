@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.3](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.4.2...v1.4.3) (2021-04-07)
+
+
+### Bug Fixes
+
+* fix peer dependency ([41e68aa](https://github.com/dirkluijk/ngx-typesafe-forms/commit/41e68aab3a895faec07a6e113aed37a1f2355529))
+
 ### [1.4.2](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.4.1...v1.4.2) (2021-04-07)
 
 
