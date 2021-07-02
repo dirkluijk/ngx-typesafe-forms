@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.4.3...v1.5.0) (2021-07-02)
+
+
+### Features
+
+* support for Angular 12 ([15e78a0](https://github.com/dirkluijk/ngx-typesafe-forms/commit/15e78a0e7c77a57ec22590d45aa3fce653d184b2))
+
 ### [1.4.3](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.4.2...v1.4.3) (2021-04-07)
 
 
