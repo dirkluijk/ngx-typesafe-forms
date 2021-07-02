@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.5.0...v1.5.1) (2021-07-02)
+
+
+### Bug Fixes
+
+* start with actual pristine value ([c43196e](https://github.com/dirkluijk/ngx-typesafe-forms/commit/c43196e1fefb1208e17f41c892309591c790732a))
+
 ## [1.5.0](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.4.3...v1.5.0) (2021-07-02)
 
 
