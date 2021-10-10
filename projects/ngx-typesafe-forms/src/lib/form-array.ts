@@ -28,7 +28,7 @@ export class FormArray<T> extends AngularFormArray implements AbstractControl<T[
   public value!: T[];
   public valueChanges!: Observable<T[]>;
 
-  public readonly value$: Observable<T> = formControlValue$(this);
+  public readonly value$: Observable<T[]> = formControlValue$(this);
 
   public readonly errors$: Observable<ValidationErrors | null> = formControlErrors$(this);
 
@@ -46,7 +46,7 @@ export class FormArray<T> extends AngularFormArray implements AbstractControl<T[
 
   public readonly invalid$: Observable<boolean> = formControlInvalid$(this);
 
-  public readonly validValue$: Observable<T> = this.value$.pipe(filter(() => this.valid));
+  public readonly validValue$: Observable<T[]> = this.value$.pipe(filter(() => this.valid));
 
   constructor(
     public controls: AbstractControl<T>[],
