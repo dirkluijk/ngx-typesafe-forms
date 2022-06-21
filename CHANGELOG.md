@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.1](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.6.0...v1.6.1) (2022-06-21)
+
+
+### Bug Fixes
+
+* use correct peer dependency for Angular 13 ([eed4ec5](https://github.com/dirkluijk/ngx-typesafe-forms/commit/eed4ec5d5229670f0266f14d02c64762f5f164b1))
+
 ## [1.6.0](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.5.2...v1.6.0) (2022-06-21)
 
 
