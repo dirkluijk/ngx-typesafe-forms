@@ -1,6 +1,7 @@
 {
   "extends": "@dscheerens/tslint-presets/tslint.recommended.angular.json",
   "rules": {
+    "trailing-comma": false,
     "deprecation": {
       "severity": "warning"
     },
