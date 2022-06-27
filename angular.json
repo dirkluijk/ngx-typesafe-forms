@@ -114,7 +114,6 @@
       }
     }
   },
-  "defaultProject": "ngx-typesafe-forms",
   "cli": {
     "analytics": "5afa0aea-5310-4c03-abca-efef53ff8d99"
   }

@@ -7,12 +7,12 @@ export { formControlPristine$ } from './lib/streams/abstract-control-pristine.st
 export { formControlStatus$ } from './lib/streams/abstract-control-status.stream';
 export { formControlValid$ } from './lib/streams/abstract-control-valid.stream';
 export { formControlValue$ } from './lib/streams/abstract-control-value.stream';
+export { formControlRawValue$ } from './lib/streams/abstract-control-raw-value.stream';
 
-export { AbstractControl } from './lib/abstract-control';
 export { ControlValueAccessor } from './lib/control-value-accessor';
 export { DefaultControlValueAccessor } from './lib/default-control-value-accessor';
 export { FormArray } from './lib/form-array';
 export { FormControl } from './lib/form-control';
-export { FormGroup } from './lib/form-group';
+export { FormGroup, FormRecord } from './lib/form-group';
 export { Invalidated } from './lib/invalidated';
 export { AbstractControlOptions, AsyncValidatorFn, ValidatorFn } from './lib/validation';

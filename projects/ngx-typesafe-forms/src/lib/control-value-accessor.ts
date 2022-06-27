@@ -3,7 +3,7 @@ import { ControlValueAccessor as AngularControlValueAccessor } from '@angular/fo
 /**
  * Provides a type safe ControlValueAccessor interface which accepts a generic type T.
  */
-export interface ControlValueAccessor<T> extends AngularControlValueAccessor {
-  writeValue(value: T | null): void;
-  registerOnChange(onChange: (value: T | null) => void): void;
+export interface ControlValueAccessor<TValue> extends AngularControlValueAccessor {
+  writeValue(value: TValue): void;
+  registerOnChange(onChange: (value: TValue) => void): void;
 }

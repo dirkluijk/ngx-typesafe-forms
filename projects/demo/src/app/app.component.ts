@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Validators, FormGroup as AngularFormGroup } from '@angular/forms';
 
-import { AbstractControl, FormArray, FormControl, FormGroup } from '../../../ngx-typesafe-forms/src/public-api';
+import { FormArray, FormControl, FormGroup } from '../../../ngx-typesafe-forms/src/public-api';
 
-interface Foo {
-  id: string;
-  name: string;
-  optionalProp?: string;
-  arrayProp: string[];
+interface FooForm {
+  id: FormControl<string>;
+  name: FormControl<string>;
+  optionalProp: FormControl<string | undefined>;
+  arrayProp: FormArray<FormControl<string>>;
 }
 
 @Component({
@@ -21,36 +21,25 @@ export class AppComponent implements OnInit {
     name: new FormControl('bla', Validators.required)
   };
 
-  public readonly formGroup = new FormGroup<Foo>({
-    id: new FormControl<string>(),
-    name: new FormControl<string>(),
-    optionalProp: new FormControl<string | undefined>(),
-    arrayProp: new FormArray<string>([new FormControl<string>()])
+  public readonly formGroup = new FormGroup<FooForm>({
+    id: new FormControl<string>('', { nonNullable: true }),
+    name: new FormControl<string>('', { nonNullable: true }),
+    optionalProp: new FormControl<string | undefined>('', { nonNullable: true }),
+    arrayProp: new FormArray([new FormControl<string>('', { nonNullable:  true })])
   });
 
   // should be assignable:
-  public readonly formGroupNg: AngularFormGroup = new FormGroup<Foo>({
-    id: new FormControl<string>(),
-    name: new FormControl<string>(),
-    optionalProp: new FormControl<string | undefined>(),
-    arrayProp: new FormArray<string>([new FormControl<string>()])
+  public readonly formGroupNg: AngularFormGroup = new FormGroup({
+    id: new FormControl<string>('', { nonNullable: true }),
+    name: new FormControl<string>('', { nonNullable: true }),
+    optionalProp: new FormControl<string | undefined>('', { nonNullable: true }),
+    arrayProp: new FormArray([new FormControl<string>('', { nonNullable:  true })])
   });
 
   public ngOnInit(): void {
-    // @ts-expect-error
     const optionalPropControl1: FormControl<string | undefined> = this.formGroup.controls.optionalProp;
-    const optionalPropControl2: FormControl<string | undefined> = this.formGroup.getFormControl('optionalProp');
 
     // tslint:disable-next-line
     optionalPropControl1
-    // tslint:disable-next-line
-    optionalPropControl2
-
-    if (this.formGroup.contains('optionalProp')) {
-      const optionalPropControl3: AbstractControl<string | undefined> = this.formGroup.controls.optionalProp;
-
-      // tslint:disable-next-line
-      optionalPropControl3
-    }
   }
 }

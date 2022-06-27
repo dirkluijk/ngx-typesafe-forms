@@ -1,19 +1,18 @@
-import { ValidationErrors } from '@angular/forms';
+import { AbstractControl, ValidationErrors } from '@angular/forms';
 
 import { ControlValueAccessor } from './control-value-accessor';
-import { AbstractControl } from './abstract-control';
 
 /**
  * A default ControlValueAccessor implementation
  */
-export abstract class DefaultControlValueAccessor<T> implements ControlValueAccessor<T> {
-  public abstract readonly control: AbstractControl<T | null>;
+export abstract class DefaultControlValueAccessor<TValue> implements ControlValueAccessor<TValue> {
+  public abstract readonly control: AbstractControl;
 
-  public writeValue(value: T | null): void {
+  public writeValue(value: TValue): void {
     this.control.setValue(value, { emitEvent: false });
   }
 
-  public registerOnChange(onChange: (value: T | null) => void): void {
+  public registerOnChange(onChange: (value: TValue) => void): void {
     this.control.valueChanges.subscribe(onChange);
   }
 

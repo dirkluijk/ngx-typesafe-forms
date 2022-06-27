@@ -9,6 +9,7 @@
     "no-implicit-dependencies": false,
     "strict-indent-size": [true, 2],
     "template-use-track-by-function": false,
-    "prefer-on-push-component-change-detection": false
+    "prefer-on-push-component-change-detection": false,
+    "no-any": false
   }
 }

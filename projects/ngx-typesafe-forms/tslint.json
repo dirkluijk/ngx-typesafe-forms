@@ -12,6 +12,7 @@
       "element",
       "bcy",
       "kebab-case"
-    ]
+    ],
+    "no-any": false
   }
 }

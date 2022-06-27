@@ -1,5 +1,6 @@
 import {
-  FormArray as AngularFormArray,
+  AbstractControl,
+  FormArray as AngularFormArray, FormControlStatus,
   ValidationErrors
 } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -12,23 +13,24 @@ import {
   formControlErrors$,
   formControlInvalid$,
   formControlPristine$,
+  formControlRawValue$,
   formControlStatus$,
   formControlValid$,
   formControlValue$
 } from './streams';
-import { setDisabled, setEnabled, FormStatus } from './internals';
-import { AbstractControl } from './abstract-control';
-import { AbstractControlOptions, AsyncValidatorFn, ValidatorFn } from './validation';
-import { FormControl } from './form-control';
+import { RawValue, setDisabled, setEnabled, TypedOrUntyped, Value } from './internals';
+import { AsyncValidatorFn, ValidatorFn } from './validation';
 
-/**
- * Provides a type safe FormControl class which accepts a generic type T.
- */
-export class FormArray<T> extends AngularFormArray implements AbstractControl<T[]> {
-  public value!: T[];
-  public valueChanges!: Observable<T[]>;
+export type FormArrayValue<T extends AbstractControl> =
+  TypedOrUntyped<T, Value<T>[], any[]>;
 
-  public readonly value$: Observable<T[]> = formControlValue$(this);
+export type FormArrayRawValue<T extends AbstractControl> =
+  TypedOrUntyped<T, RawValue<T>[], any[]>;
+
+export class FormArray<TControl extends AbstractControl> extends AngularFormArray<TControl> {
+  public readonly value$: Observable<FormArrayValue<TControl>> = formControlValue$(this);
+
+  public readonly rawValue$: Observable<FormArrayRawValue<TControl>> = formControlRawValue$(this);
 
   public readonly errors$: Observable<ValidationErrors | null> = formControlErrors$(this);
 
@@ -38,7 +40,7 @@ export class FormArray<T> extends AngularFormArray implements AbstractControl<T[
 
   public readonly valid$: Observable<boolean> = formControlValid$(this);
 
-  public readonly status$: Observable<FormStatus> = formControlStatus$(this);
+  public readonly status$: Observable<FormControlStatus> = formControlStatus$(this);
 
   public readonly disabled$: Observable<boolean> = abstractControlDisabled$(this);
 
@@ -46,64 +48,16 @@ export class FormArray<T> extends AngularFormArray implements AbstractControl<T[
 
   public readonly invalid$: Observable<boolean> = formControlInvalid$(this);
 
-  public readonly validValue$: Observable<T[]> = this.value$.pipe(filter(() => this.valid));
+  public readonly validValue$: Observable<FormArrayValue<TControl>> = this.value$.pipe(filter(() => this.valid));
 
-  constructor(
-    public controls: AbstractControl<T>[],
-    validatorOrOpts?: ValidatorFn<T[]> | ValidatorFn<T[]>[] | AbstractControlOptions<T[]> | null,
-    asyncValidator?: AsyncValidatorFn<T> | AsyncValidatorFn<T>[] | null
-  ) {
-    super(controls, validatorOrOpts, asyncValidator);
-  }
-
-  public setValidators(newValidator: ValidatorFn<T[]> | ValidatorFn<T[]>[] | null): void {
+  public setValidators(newValidator: ValidatorFn<FormArrayValue<TControl>> | ValidatorFn<FormArrayValue<TControl>>[] | null): void {
     super.setValidators(newValidator);
   }
 
-  public setAsyncValidators(newValidator: AsyncValidatorFn<T[]> | AsyncValidatorFn<T[]>[] | null): void {
+  public setAsyncValidators(
+    newValidator: AsyncValidatorFn<FormArrayValue<TControl>> | AsyncValidatorFn<FormArrayValue<TControl>>[] | null
+  ): void {
     super.setAsyncValidators(newValidator);
-  }
-
-  public at(index: number): AbstractControl<T> {
-    return super.at(index);
-  }
-
-  public controlAt(index: number): FormControl<T> {
-    const control = this.at(index);
-
-    if (!(control instanceof FormControl)) {
-      throw Error(`Abstract control with index ${index} is not a FormControl.`);
-    }
-
-    return control;
-  }
-
-  public push(control: AbstractControl<T>): void {
-    return super.push(control);
-  }
-
-  public insert(index: number, control: AbstractControl<T>): void {
-    return super.insert(index, control);
-  }
-
-  public setControl(index: number, control: AbstractControl<T>): void {
-    return super.setControl(index, control);
-  }
-
-  public setValue(value: T[], options?: { onlySelf?: boolean; emitEvent?: boolean }): void {
-    return super.setValue(value, options);
-  }
-
-  public patchValue(value: T[], options?: { onlySelf?: boolean; emitEvent?: boolean }): void {
-    return super.patchValue(value, options);
-  }
-
-  public reset(value?: T[], options?: { onlySelf?: boolean; emitEvent?: boolean }): void {
-    return super.reset(value, options);
-  }
-
-  public getRawValue(): T[] {
-    return super.getRawValue();
   }
 
   public setEnabled(enabled: boolean = true): void {
