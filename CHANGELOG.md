@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v2.0.0...v2.0.1) (2022-06-28)
+
+
+### Bug Fixes
+
+* fixed broken rawValue$ stream ([d40e836](https://github.com/dirkluijk/ngx-typesafe-forms/commit/d40e836991ddaecfe991bdaea26aace9a788f1ee))
+
 ## [2.0.0](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.6.1...v2.0.0) (2022-06-28)
 
 
