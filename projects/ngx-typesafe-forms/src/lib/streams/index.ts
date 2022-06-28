@@ -7,3 +7,4 @@ export * from './abstract-control-pristine.stream';
 export * from './abstract-control-status.stream';
 export * from './abstract-control-valid.stream';
 export * from './abstract-control-value.stream';
+export * from './abstract-control-raw-value.stream';

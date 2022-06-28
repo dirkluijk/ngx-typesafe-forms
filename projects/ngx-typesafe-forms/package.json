@@ -1,12 +1,16 @@
 {
   "name": "ngx-typesafe-forms",
-  "version": "1.6.1",
+  "version": "2.0.0-beta.3",
   "description": "Because FormControl<T> is more awesome than FormControl",
   "author": "Dirk Luijk <mail@dirkluijk.nl>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dirkluijk/ngx-typesafe-forms.git"
+  },
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "@angular/forms": "^13.0.0",
+    "@angular/forms": "^14.0.0",
     "rxjs": "^6.0.0"
   },
   "dependencies": {

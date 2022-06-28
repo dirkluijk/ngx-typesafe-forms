@@ -7,11 +7,26 @@
 ![Build status](https://github.com/dirkluijk/ngx-typesafe-forms/actions/workflows/main.yml/badge.svg?branch=master)
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 
+## Using Angular 14?
+
+If you are using Angular 14 or higher, there is no need for using this library. 
+Instead, we recommend you to use the [default Angular type-safe forms](https://angular.io/guide/typed-forms) in that case.
+
+If you still want to use some of the additional features mentioned below, we recommend version `2.0` of this library, which is compatible with Angular 14.
+
+| Angular version  | Version |
+|------------------|--------:|
+| Angular 14       | [`2.x.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v2.0.0) |
+| Angular 13       | [`1.6.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v1.6.1) |
+| Angular 12       | [`1.5.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v1.5.2) |
+| Angular 11       | [`1.4.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v1.4.3) |
+| Angular 10 or lower | [`1.3.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v1.3.1) |
+
 ## Overview
 
 ### What? 🤔
 
-This is a small library to make Angular Forms more type-safe!
+A small library to make Angular Forms more type-safe!
 
 * Type-safe versions of `FormControl`, `FormGroup`, `FormArray` and `ControlValueAccessor`
 * 100% compatible with `@angular/forms` and existing Angular libraries!
@@ -22,8 +37,8 @@ This is a small library to make Angular Forms more type-safe!
 
 ### Why? 🤷‍♂️
 
-Angular Forms are not very type-safe. They accept any type of value.
-This library makes your code more type-safe. More type-safety means smaller risk for bugs!
+Angular Forms are not very type-safe (at least, up until Angular 13). 
+This library makes your form code more type-safe. More type-safety means smaller risks for bugs!
 
 ## Installation 🌩
 
@@ -45,28 +60,6 @@ yarn add ngx-typesafe-forms
 
 Just import your `FormControl`, `FormGroup`, `FormArray` and `ControlValueAccessor`
 from `ngx-typesafe-forms` instead of `@angular/forms` and you are done!
-
-```typescript
-import { FormControl, FormGroup } from 'ngx-typesafe-forms';
-
-@Component({ /* ... */ })
-class YourComponent {
-  myControl = new FormControl<string>();
-  
-  myFormGroup = new FormGroup<Person>({
-    name: new FormControl(),
-    birthDate: new FormControl(new Date())
-  });
-  
-  changeDate(): void {
-    this.myControl.setValue(123); // error: this will not compile!
-    this.myFormGroup.controls.birthDate.setValue('foo'); // error: this will not compile!
-    
-    this.myControl.setValue('Foo'); // yes, this will!
-    this.myFormGroup.controls.birthDate.setValue(new Date()); // yes, this will!
-  }
-}
-```
 
 ### Additional reactive properties
 
@@ -95,6 +88,7 @@ The recommended properties are:
 * `valid$`
 * `status$`
 * `validValue$`
+* `rawValue$`
 
 Additionally, we also provide some of their counterparts:
 
@@ -103,29 +97,6 @@ Additionally, we also provide some of their counterparts:
 * `invalid$`
 
 NOTE: all of these streams also include the current (initial) values.
-
-## FAQ
-
-### How to deal with validation and null values?
-
-If you want to assume that form values are always valid, just use `FormControl<Foo>`.
-
-However, form values can also be null (if invalid). If you want to use this more strictly, you can use `FormControl<Foo | null>`
-or even `FormGroup<Invalidated<Foo>>` (which marks all properties as nullable).
-
-### Help, my `myFormGroup.controls.foo` is an optional `AbstractControl`!
-
-Sometimes, it's not guaranteed that a `FormGroup` contains a certain form control,
-or that it is actually a `FormControl` (it could also be a `FormArray`).
-
-For that reason, we introduced new methods to `FormGroup` in version `1.3.0`:
-
-* `FormGroup.getControl(name: string)` - returns a `AbstractControl`, throws error if it was not found.
-* `FormGroup.getFormControl(name: string)` - returns a `FormControl`, throws error if it was not found or not instance of `FormControl`.
-
-The same applies for `FormArray.at(index: number)`, which returns a `AbstractControl`. For that reason we introduced:
-
-* `FormArray.controlAt(index: number)` - returns a `FormControl`, throws error if it is not an instance of `FormControl`.
 
 ## Contributors ✨
 
