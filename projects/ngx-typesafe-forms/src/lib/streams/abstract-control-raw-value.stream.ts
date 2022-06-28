@@ -7,7 +7,7 @@ export function formControlRawValue$<TValue = any, TRawValue extends TValue = TV
 ): Observable<TRawValue> {
   return merge(
     defer(() => of(formControl.getRawValue())),
-    merge([formControl.statusChanges, formControl.valueChanges]).pipe(
+    merge(formControl.statusChanges, formControl.valueChanges).pipe(
       map(() => formControl.getRawValue()),
       distinctUntilChanged()
     )
