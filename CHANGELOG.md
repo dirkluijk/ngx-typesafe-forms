@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.6.1...v2.0.0) (2022-06-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* Generic types for `FormGroup` and `FormArray` now correspond to the `TControl`
+object structure, to align with Angular 14
+* Made `ControlValueAccessor` and `DefaultValueAccessor` more strict in terms of null-safety to align with the Angular 14 `nonNullable` option.
+* Removed `AbstractValue` in favour of the default Angular abstract class
+
+### Features
+
+* support for Angular 14 ([#55](https://github.com/dirkluijk/ngx-typesafe-forms/issues/55)) ([09619c9](https://github.com/dirkluijk/ngx-typesafe-forms/commit/09619c95089904533dbe1c3ba8af18418303fa47))
+
 ### [1.6.1](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v1.6.0...v1.6.1) (2022-06-21)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "ngx-typesafe-forms",
-  "version": "2.0.0-beta.3",
+  "version": "2.0.0",
   "description": "Because FormControl<T> is more awesome than FormControl",
   "author": "Dirk Luijk <mail@dirkluijk.nl>",
   "repository": {
