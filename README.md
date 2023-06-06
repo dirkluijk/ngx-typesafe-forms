@@ -14,12 +14,13 @@ Instead, we recommend you to use the [default Angular type-safe forms](https://a
 
 If you still want to use some of the additional features mentioned below, we recommend version `2.0` of this library, which is compatible with Angular 14.
 
-| Angular version  | Version |
-|------------------|--------:|
-| Angular 14       | [`2.x.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v2.0.0) |
-| Angular 13       | [`1.6.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v1.6.1) |
-| Angular 12       | [`1.5.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v1.5.2) |
-| Angular 11       | [`1.4.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v1.4.3) |
+| Angular version     |                                                                Version |
+|---------------------|-----------------------------------------------------------------------:|
+| Angular 15          | [`2.1.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v2.1.0) |
+| Angular 14          | [`2.x.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v2.0.0) |
+| Angular 13          | [`1.6.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v1.6.1) |
+| Angular 12          | [`1.5.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v1.5.2) |
+| Angular 11          | [`1.4.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v1.4.3) |
 | Angular 10 or lower | [`1.3.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v1.3.1) |
 
 ## Overview
