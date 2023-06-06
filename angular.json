@@ -20,13 +20,8 @@
               "tsConfig": "projects/ngx-typesafe-forms/tsconfig.lib.prod.json"
             }
           }
-        },
-        "test": {
-          "builder": "@angular-builders/jest:run",
-          "options": {
-            "coverage": true
-          }
         }
+
       }
     },
     "demo": {
