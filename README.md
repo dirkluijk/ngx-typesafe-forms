@@ -16,6 +16,7 @@ If you still want to use some of the additional features mentioned below, we rec
 
 | Angular version     |                                                                Version |
 |---------------------|-----------------------------------------------------------------------:|
+| Angular 16          | [`2.2.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v2.2.0) |
 | Angular 15          | [`2.1.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v2.1.0) |
 | Angular 14          | [`2.x.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v2.0.0) |
 | Angular 13          | [`1.6.x`](https://github.com/dirkluijk/ngx-typesafe-forms/tree/v1.6.1) |

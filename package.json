@@ -18,53 +18,49 @@
     "copy:docs": "cp ./*.md ./LICENSE dist/ngx-typesafe-forms",
     "release": "standard-version && yarn build",
     "release:minor": "standard-version --release-as minor && yarn build",
-    "release:major": "standard-version --release-as major && yarn build"
+    "release:major": "standard-version --release-as major && yarn build",
+    "prepare": "husky install",
+    "postinstall": "husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
   },
   "private": false,
   "dependencies": {
-    "@angular/common": "^15.2.9",
-    "@angular/compiler": "^15.2.9",
-    "@angular/core": "^15.2.9",
-    "@angular/forms": "^15.2.9",
-    "@angular/platform-browser": "^15.2.9",
-    "@angular/platform-browser-dynamic": "^15.2.9",
-    "rxjs": "~6.6.3",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "@angular/common": "^16.0.4",
+    "@angular/compiler": "^16.0.4",
+    "@angular/core": "^16.0.4",
+    "@angular/forms": "^16.0.4",
+    "@angular/platform-browser": "^16.0.4",
+    "@angular/platform-browser-dynamic": "^16.0.4",
+    "rxjs": "~7.8.1",
+    "tslib": "^2.5.3",
+    "zone.js": "~0.13.0"
   },
   "devDependencies": {
-    "@angular-builders/jest": "^10.0.1",
-    "@angular-devkit/build-angular": "^15.2.8",
-    "@angular/cli": "^15.2.8",
-    "@angular/compiler-cli": "^15.2.9",
-    "@angular/language-service": "^15.2.9",
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
+    "@angular-devkit/build-angular": "^16.0.4",
+    "@angular/cli": "^16.0.4",
+    "@angular/compiler-cli": "^16.0.4",
+    "@angular/language-service": "^16.0.4",
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
     "@dirkluijk/observable-matchers": "^0.3.2",
     "@dscheerens/tslint-presets": "^9.0.0",
-    "@ngneat/spectator": "^10.0.0",
-    "@types/jest": "^27.0.0",
-    "@types/node": "^14.10.3",
-    "all-contributors-cli": "^6.17.3",
+    "@types/node": "^20.2.5",
+    "all-contributors-cli": "^6.26.0",
     "codelyzer": "^6.0.0",
-    "commitizen": "^4.2.1",
+    "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^4.3.0",
-    "jest": "^26.0.0",
-    "ng-packagr": "^15.2.2",
-    "standard-version": "^9.0.0",
-    "ts-node": "~9.0.0",
+    "husky": "^8.0.3",
+    "ng-packagr": "^16.0.1",
+    "pinst": "^3.0.0",
+    "standard-version": "^9.5.0",
+    "ts-node": "~10.9.1",
     "tslint": "~6.1.0",
     "typescript": "~4.9.5"
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
