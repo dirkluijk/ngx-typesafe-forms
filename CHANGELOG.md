@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v2.1.0...v2.2.0) (2023-06-06)
+
+
+### Features
+
+* add formGroupValue$ and formArrayValue$ helpers ([1f5fd39](https://github.com/dirkluijk/ngx-typesafe-forms/commit/1f5fd3994483faa93e085b11b4206900bcfe22d7))
+* add support for Angular 16 ([af0da36](https://github.com/dirkluijk/ngx-typesafe-forms/commit/af0da367887a12306646e5485e0bbd03b59ac2ef))
+
 ## [2.1.0](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v2.0.1...v2.1.0) (2023-06-06)
 
 
