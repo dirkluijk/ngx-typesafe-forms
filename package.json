@@ -16,7 +16,9 @@
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "copy:docs": "cp ./*.md ./LICENSE dist/ngx-typesafe-forms",
-    "release": "cd projects/ngx-typesafe-forms && standard-version --infile ../../CHANGELOG.md && cd ../.. && yarn build"
+    "release": "standard-version && yarn build",
+    "release:minor": "standard-version --release-as minor && yarn build",
+    "release:major": "standard-version --release-as major && yarn build"
   },
   "private": false,
   "dependencies": {

@@ -1,0 +1,4 @@
+{
+    "packageFiles": ["projects/ngx-typesafe-forms/package.json"],
+    "bumpFiles": ["projects/ngx-typesafe-forms/package.json"]
+}
