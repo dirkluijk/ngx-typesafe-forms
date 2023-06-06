@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Validators, FormGroup as AngularFormGroup } from '@angular/forms';
-
-import { FormArray, FormControl, FormGroup } from '../../../ngx-typesafe-forms/src/public-api';
+import { FormArray, FormControl, FormGroup } from 'ngx-typesafe-forms';
 
 interface FooForm {
   id: FormControl<string>;

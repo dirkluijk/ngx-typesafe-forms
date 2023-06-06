@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 
 import { mapToOpposite } from '../internals';
 
-import { formControlPristine$ } from './abstract-control-pristine.stream';
+import { formControlPristine$ } from './control-pristine.stream';
 
 export function abstractControlDirty$(formControl: AbstractControl): Observable<boolean> {
   return formControlPristine$(formControl).pipe(mapToOpposite());

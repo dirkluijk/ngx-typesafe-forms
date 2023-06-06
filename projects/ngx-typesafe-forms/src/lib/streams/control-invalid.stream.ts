@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 
 import { mapToOpposite } from '../internals';
 
-import { formControlValid$ } from './abstract-control-valid.stream';
+import { formControlValid$ } from './control-valid.stream';
 
 export function formControlInvalid$(formControl: AbstractControl): Observable<boolean> {
   return formControlValid$(formControl).pipe(mapToOpposite());

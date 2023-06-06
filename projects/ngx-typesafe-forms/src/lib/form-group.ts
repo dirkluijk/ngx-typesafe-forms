@@ -16,7 +16,7 @@ import {
   formControlPristine$, formControlRawValue$,
   formControlStatus$,
   formControlValid$,
-  formControlValue$
+  formGroupValue$
 } from './streams';
 import { RawValue, setDisabled, setEnabled, TypedOrUntyped, Value } from './internals';
 import { AsyncValidatorFn, ValidatorFn } from './validation';
@@ -29,7 +29,7 @@ export type FormGroupValue<T extends { [K in keyof T]?: AbstractControl }> =
 
 export class FormGroup<TControl extends { [K in keyof TControl]: AbstractControl } = any> extends AngularFormGroup<TControl> {
 
-  public readonly value$: Observable<FormGroupValue<TControl>> = formControlValue$(this);
+  public readonly value$: Observable<FormGroupValue<TControl>> = formGroupValue$(this);
 
   public readonly rawValue$: Observable<FormGroupRawValue<TControl>> = formControlRawValue$(this);
 

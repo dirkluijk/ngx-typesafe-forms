@@ -8,7 +8,7 @@ import { filter } from 'rxjs/operators';
 
 import {
   abstractControlDirty$,
-  abstractControlDisabled$,
+  abstractControlDisabled$, formArrayValue$,
   formControlEnabled$,
   formControlErrors$,
   formControlInvalid$,
@@ -16,7 +16,6 @@ import {
   formControlRawValue$,
   formControlStatus$,
   formControlValid$,
-  formControlValue$
 } from './streams';
 import { RawValue, setDisabled, setEnabled, TypedOrUntyped, Value } from './internals';
 import { AsyncValidatorFn, ValidatorFn } from './validation';
@@ -28,7 +27,7 @@ export type FormArrayRawValue<T extends AbstractControl> =
   TypedOrUntyped<T, RawValue<T>[], any[]>;
 
 export class FormArray<TControl extends AbstractControl> extends AngularFormArray<TControl> {
-  public readonly value$: Observable<FormArrayValue<TControl>> = formControlValue$(this);
+  public readonly value$: Observable<FormArrayValue<TControl>> = formArrayValue$(this);
 
   public readonly rawValue$: Observable<FormArrayRawValue<TControl>> = formControlRawValue$(this);
 
