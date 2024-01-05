@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v2.2.0...v2.3.0) (2024-01-05)
+
+
+### Features
+
+* add support for Angular 17 ([#65](https://github.com/dirkluijk/ngx-typesafe-forms/issues/65)) ([6eac71e](https://github.com/dirkluijk/ngx-typesafe-forms/commit/6eac71eea9eb856939e89789824760f6040a7847))
+
 ## [2.2.0](https://github.com/dirkluijk/ngx-typesafe-forms/compare/v2.1.0...v2.2.0) (2023-06-06)
 
 
